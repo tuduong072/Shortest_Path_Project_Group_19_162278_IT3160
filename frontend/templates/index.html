@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Routing System - Hoàng Liệt</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hệ Thống Tìm Đường - Phường Hoàng Liệt</h1>
+            <a href="/admin" class="admin-link">Chế độ Admin</a>
+        </header>
+
+        <div class="content">
+            <div class="sidebar">
+                <div class="section">
+                    <h2>Chọn Điểm Bắt Đầu</h2>
+                    <div class="input-group">
+                        <label>Vĩ độ:</label>
+                        <input type="number" id="start-lat" step="0.000001" placeholder="20.962223">
+                    </div>
+                    <div class="input-group">
+                        <label>Kinh độ:</label>
+                        <input type="number" id="start-lon" step="0.000001" placeholder="105.830595">
+                    </div>
+                    <button id="pick-start" class="btn btn-secondary">Chọn trên bản đồ</button>
+                </div>
+
+                <div class="section">
+                    <h2>Chọn Điểm Kết Thúc</h2>
+                    <div class="input-group">
+                        <label>Vĩ độ:</label>
+                        <input type="number" id="end-lat" step="0.000001" placeholder="20.960000">
+                    </div>
+                    <div class="input-group">
+                        <label>Kinh độ:</label>
+                        <input type="number" id="end-lon" step="0.000001" placeholder="105.835000">
+                    </div>
+                    <button id="pick-end" class="btn btn-secondary">Chọn trên bản đồ</button>
+                </div>
+
+                <div class="section">
+                    <h2>Thuật Toán</h2>
+                    <select id="algorithm" class="select-box">
+                        <option value="dijkstra">Dijkstra</option>
+                        <option value="a_star">A* (A-Star)</option>
+                    </select>
+                </div>
+
+                <button id="find-path" class="btn btn-primary">Tìm Đường</button>
+
+                <div id="result" class="result hidden">
+                    <h2>Kết Quả</h2>
+                    <div class="result-item">
+                        <strong>Tổng khoảng cách:</strong>
+                        <span id="total-distance">-</span>
+                    </div>
+                    <div class="result-item">
+                        <strong>Số node đi qua:</strong>
+                        <span id="num-nodes">-</span>
+                    </div>
+                    <div class="result-item">
+                        <strong>Đường đi:</strong>
+                        <div id="path-string" class="path-string">-</div>
+                    </div>
+                    <div class="result-details">
+                        <small>Khoảng cách đồ thị: <span id="graph-distance">-</span></small><br>
+                        <small>Khoảng cách đến điểm đầu: <span id="start-offset">-</span></small><br>
+                        <small>Khoảng cách đến điểm cuối: <span id="end-offset">-</span></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+</body>
+</html>
