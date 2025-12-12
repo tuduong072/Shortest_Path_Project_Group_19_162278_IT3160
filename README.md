@@ -176,11 +176,13 @@ Mở trình duyệt:
 
 ## Màu Sắc Đường
 
-- 🔴 **Đỏ (#E6194B)**: Block - Chặn hoàn toàn
-- 🟠 **Cam (#FF9900)**: Penalty - Ngập nước
-- 🟡 **Vàng (#FFCC00)**: Penalty - Tắc đường
-- 🔵 **Xanh dương (#0082C8)**: Oneway - Một chiều
-- ⚫ **Xám (#666666)**: Normal - Đường bình thường
+- 🔴 **Đỏ (#DC2626)**: Block - Chặn hoàn toàn
+- 🟠 **Cam (#EA580C)**: Penalty - Ngập nước
+- 🟡 **Vàng (#F59E0B)**: Penalty - Tắc đường
+- 🔵 **Xanh dương (#0051ffff)**: Oneway - Một chiều
+- ⚫ **Xám (#6B7280)**: Normal - Đường bình thường
+- 🟣 **Tím (#7C3AED)**: Oneway_original - Một chiều gốc
+- 🩷 **Hồng (#ff00c3ff)**: Đường đang chọn
 - 🟢 **Xanh lá (#00D084)**: Đường đi tìm được
 
 ## API Endpoints
