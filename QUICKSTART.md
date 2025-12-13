@@ -1,135 +1,213 @@
-# Quick Start Guide
+# 🚀 Quick Start - Hệ Thống Tìm Đường Ngắn Nhất
 
-## 5-Minute Setup
+## ⏱️ **Thiết lập trong 5 phút**
 
-### 1. Prerequisites
-- Python 3.8+ installed
-- Your CSV data files ready
+### 📋 **Yêu cầu hệ thống**
+- Python 3.8 trở lên
+- Git (để clone repository)
+- Trình duyệt web hiện đại
 
-### 2. Setup Database
+## 🛠️ **Cài đặt nhanh**
 
-The database schema is already created. You just need to have:
+### **Bước 1: Clone repository**
+```bash
+git clone https://github.com/tuduong072/Shortest_Path_Project_Group_19_162278_IT3160.git
+cd Shortest_Path_Project_Group_19_162278_IT3160
+```
 
-
-These are already configured in your `.env` file.
-
-### 3. Prepare Your Data
-
-Replace sample data in `data/` folder:
-
-- `data/nodes.csv` - Your 949 nodes
-- `data/edges.csv` - Your 2322 edges
-- `data/constraints/constraints_edges.csv` - Optional initial constraints
-
-### 4. Install & Import
-
-\`\`\`bash
-# Install dependencies
+### **Bước 2: Cài đặt Python dependencies**
+```bash
+# Di chuyển vào thư mục backend
 cd backend
+
+# Cài đặt các thư viện cần thiết
 pip install -r requirements.txt
 
-# Import data
-python import_data.py
-\`\`\`
+# Nếu gặp lỗi permission, thử:
+pip install --user -r requirements.txt
+```
 
-### 5. Run Application
+### **Bước 3: Chuẩn bị dữ liệu**
+```bash
+# Đảm bảo có thư mục data với các file CSV
+# Cấu trúc thư mục:
+# data/
+#   ├── nodes.csv      # 949 nodes
+#   └── edges.csv      # 2322 edges
 
-**Linux/Mac:**
-\`\`\`bash
-./run.sh
-\`\`\`
+# Nếu chưa có dữ liệu, tạo thư mục mẫu:
+mkdir -p data
+# Sao chép file CSV của bạn vào thư mục data/
+```
 
-**Windows:**
-\`\`\`bash
-run.bat
-\`\`\`
-
-**Or manually:**
-\`\`\`bash
+### **Bước 4: Chạy ứng dụng**
+```bash
+# Chạy server Flask
 python app.py
-\`\`\`
 
-### 6. Open Browser
+# Hoặc nếu có file run.sh (Linux/Mac)
+./run.sh
 
-- User Interface: http://localhost:5000
-- Admin Panel: http://localhost:5000/admin
+# Hoặc run.bat (Windows)
+run.bat
+```
 
-## That's It!
+### **Bước 5: Truy cập ứng dụng**
+Mở trình duyệt và truy cập:
+- **Giao diện người dùng**: http://localhost:5000
+- **Giao diện quản trị**: http://localhost:5000/admin
 
-You now have:
-- ✅ Full routing system with Dijkstra & A*
-- ✅ Real-time constraint management
-- ✅ Interactive map interface
-- ✅ Admin panel for managing road constraints
+## 🧪 **Test nhanh ứng dụng**
 
-## Quick Test
+### **Test 1: Tìm đường đơn giản**
+1. Truy cập http://localhost:5000
+2. Click **"Chọn trên bản đồ"** cho điểm bắt đầu
+3. Click **"Chọn trên bản đồ"** cho điểm kết thúc  
+4. Click **"Tìm Đường"**
+5. Xem kết quả trên bản đồ và thông tin chi tiết
 
-1. Go to http://localhost:5000
-2. Click "Chọn trên bản đồ" for start point
-3. Click "Chọn trên bản đồ" for end point
-4. Click "Tìm Đường"
-5. See the route on the map!
+### **Test 2: Quản lý ràng buộc (Admin)**
+1. Truy cập http://localhost:5000/admin
+2. Click **"Vẽ Polygon"**
+3. Vẽ một vùng trên bản đồ
+4. Chọn loại ràng buộc (Block/Penalty/One-way)
+5. Click **"Áp Dụng Ràng Buộc"**
+6. Quay lại giao diện người dùng và test lại
 
-## Admin Quick Test
+## 📁 **Cấu trúc dữ liệu CSV**
 
-1. Go to http://localhost:5000/admin
-2. Click "Vẽ Polygon"
-3. Draw a shape on the map
-4. See affected edges
-5. Select "Block" constraint
-6. Add description: "Test block"
-7. Click "Áp Dụng Ràng Buộc"
-8. Go back to user interface and try routing - blocked edges won't be used!
+### **nodes.csv (bắt buộc)**
+```csv
+node_id,latitude,longitude,name
+1,20.962223,105.830595,Node 1
+2,20.962500,105.831000,Node 2
+```
 
-## Common Issues
+### **edges.csv (bắt buộc)**
+```csv
+edge_id,from_node,to_node,distance,is_oneway,name
+1,1,2,150.5,0,Đường ABC
+2,2,3,200.0,1,Đường một chiều
+```
 
-**Can't import data?**
-- Check your CSV file format
-- Ensure nodes.csv is imported before edges.csv
+## 🚨 **Xử lý sự cố nhanh**
 
-**No path found?**
-- Try points closer together
-- Check for block constraints
-- Verify graph connectivity
+### **Lỗi "Module not found"**
+```bash
+# Đảm bảo đã cài requirements.txt
+pip install flask pandas numpy
 
-**Map not loading?**
-- Check internet connection (needs OpenStreetMap tiles)
-- Check browser console for errors
+# Kiểm tra Python version
+python --version
+```
 
-## Next Steps
+### **Lỗi "CSV file not found"**
+```bash
+# Kiểm tra file tồn tại
+ls data/
+# Nên có: nodes.csv và edges.csv
 
-- Read [README.md](README.md) for full documentation
-- Read [SETUP.md](SETUP.md) for detailed setup guide
-- Customize colors and styles in `frontend/static/css/style.css`
-- Add more algorithms in `backend/core/algorithms.py`
+# Kiểm tra đường dẫn
+cat backend/app.py | grep "data/"
+```
 
-## Data Format Reference
+### **Lỗi port 5000 đang được sử dụng**
+```bash
+# Đổi port (ví dụ sang 5001)
+python app.py --port 5001
+# Truy cập: http://localhost:5001
+```
 
-**nodes.csv:**
-\`\`\`csv
-node_id,latitude,longitude
-1,20.962223,105.830595
-\`\`\`
+### **Bản đồ không hiển thị**
+- Kiểm tra kết nối internet (cần tải tile từ OpenStreetMap)
+- Mở Developer Console (F12) xem lỗi
+- Thử trình duyệt khác
 
-**edges.csv:**
-\`\`\`csv
-edge_id,from_node,to_node,distance,is_oneway
-1,1,2,150.5,0
-\`\`\`
-- distance: in meters
-- is_oneway: 0=bidirectional, 1=one-way
+## ⚡ **Lệnh nhanh một dòng**
+```bash
+# Cài đặt và chạy nhanh
+git clone https://github.com/tuduong072/Shortest_Path_Project_Group_19_162278_IT3160.git && cd Shortest_Path_Project_Group_19_162278_IT3160/backend && pip install -r requirements.txt && python app.py
+```
 
-**constraints_edges.csv:**
-\`\`\`csv
-edge_id,constraint_type,value,description
-10,block,1.0,Flooded area
-15,penalty,1.5,Light traffic
-20,oneway,forward,Temporary one-way
-\`\`\`
+## 🔧 **Cấu hình nâng cao nhanh**
 
-## Support
+### **Thay đổi port**
+```bash
+python app.py --port 8080
+```
 
-Need help? Check:
-1. Browser Developer Console (F12)
-2. Terminal/Command Prompt output
-3. Full documentation in README.md
+### **Chạy với debug mode**
+```bash
+python app.py --debug
+```
+
+### **Sử dụng database khác**
+```bash
+# Sửa file .env hoặc config trong app.py
+DATABASE_URL=sqlite:///path/to/your/database.db
+```
+
+## 📊 **Thuật toán hỗ trợ**
+
+1. **Dijkstra** - Tìm đường ngắn nhất cổ điển
+2. **A*** - Tối ưu với heuristic (khoảng cách Haversine)
+3. **Real-time constraints** - Ràng buộc thời gian thực
+
+## 🎯 **Mẹo sử dụng nhanh**
+
+### **Tối ưu hiệu suất**
+- Giới hạn tìm kiếm trong phạm vi hợp lý
+- Sử dụng ràng buộc để giảm không gian tìm kiếm
+- Cache kết quả cho các query phổ biến
+
+### **Debug nhanh**
+```bash
+# Xem log server
+tail -f backend/logs/app.log
+
+# Kiểm tra API
+curl http://localhost:5000/api/nodes
+curl http://localhost:5000/api/edges
+```
+
+## 📞 **Hỗ trợ nhanh**
+
+### **Kiểm tra nhanh hệ thống**
+```bash
+# Kiểm tra Python
+python --version
+python -c "import flask; print('Flask OK')"
+
+# Kiểm tra file
+ls -la data/*.csv
+
+# Kiểm tra server
+curl -I http://localhost:5000
+```
+
+### **Các lỗi thường gặp và fix nhanh**
+
+| Lỗi | Nguyên nhân | Fix nhanh |
+|-----|------------|-----------|
+| `ImportError` | Thiếu thư viện | `pip install -r requirements.txt` |
+| `FileNotFoundError` | Thiếu file CSV | Kiểm tra thư mục `data/` |
+| `Address already in use` | Port bận | Đổi port: `--port 5001` |
+| `Map not loading` | No internet | Kiểm tra mạng, thử refresh |
+
+## ✅ **Kiểm tra hoàn tất**
+
+Sau khi chạy thành công, bạn sẽ có:
+- ✅ Web server chạy trên http://localhost:5000
+- ✅ Bản đồ tương tác với OpenStreetMap
+- ✅ Tìm đường với Dijkstra và A*
+- ✅ Giao diện quản trị ràng buộc
+- ✅ API RESTful cho tích hợp
+
+---
+
+**🎉 Chúc mừng! Bạn đã thiết lập thành công hệ thống tìm đường ngắn nhất!**
+
+**Cần hỗ trợ thêm?**
+- Xem file [README.md](README.md) để biết chi tiết đầy đủ
+- Kiểm tra [SETUP.md](SETUP.md) để cấu hình nâng cao
+- Mở Issue trên GitHub để báo lỗi/đề xuất tính năng
