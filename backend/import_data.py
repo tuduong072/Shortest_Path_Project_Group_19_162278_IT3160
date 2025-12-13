@@ -1,8 +1,5 @@
 import csv
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 def import_nodes(csv_path):
     print(f"Importing nodes from {csv_path}...")

@@ -61,7 +61,7 @@ This is a web-based routing system for Hoàng Liệt ward with real-time constra
 │  ┌──────────┐  ┌──────────┐  ┌────────────────────┐          │
 │  │  nodes   │  │  edges   │  │ constraints_edges  │          │
 │  │          │  │          │  │                    │          │
-│  │ 949 rows │  │2322 rows │  │   Dynamic data     │          │
+│  │ 949 rows │  │2356 rows │  │   Dynamic data     │          │
 │  └──────────┘  └──────────┘  └────────────────────┘          │
 │                                                              │
 │  Row Level Security (RLS): Public read, Authenticated write  │
@@ -302,7 +302,7 @@ All tables have RLS enabled with following policies:
 
 2. **Canvas Rendering:**
    - Leaflet uses canvas for smooth rendering
-   - Efficient for 2322 edges
+   - Efficient for 2356 edges
 
 3. **Debouncing:**
    - Could add debouncing for input fields
@@ -323,7 +323,7 @@ All tables have RLS enabled with following policies:
 
 ### Current Limits
 - Nodes: ~1,000 (949 in Hoàng Liệt)
-- Edges: ~5,000 (2322 in Hoàng Liệt)
+- Edges: ~5,000 (2356 in Hoàng Liệt)
 - Concurrent users: ~100 (Flask dev server)
 
 ### Scaling Options

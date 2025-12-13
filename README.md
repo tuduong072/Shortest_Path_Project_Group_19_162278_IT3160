@@ -45,7 +45,8 @@
 project/
 ├── backend/                       # Flask backend
 │   ├── app.py                    # Server chính
-│   ├── run.sh / run.bat         # Startup scripts
+│   ├── import_data.py            # Join dữ liệu
+│   ├── run.sh / run.bat          # Startup scripts
 │   ├── requirements.txt          # Python dependencies
 │   └── core/
 │       ├── graph.py              # RoadGraph + Haversine
@@ -64,17 +65,15 @@ project/
 │
 ├── data/                          # CSV data files
 │   ├── nodes.csv                # 949 nodes
-│   ├── edges.csv                # 2322 edges
+│   ├── edges.csv                # 2356 edges
 │   └── constraints/
 │       └── constraints_edges.csv # Constraints (auto-created)
 │
-├── Documentation
-│   ├── README.md                 # Main documentation
-│   ├── QUICKSTART.md            # 5-minute setup
-│   ├── SETUP.md                 # Detailed setup
-│   └── ARCHITECTURE.md          # System architecture
-│
-└── .env                          # Config (optional)
+└── Documentation
+    ├── README.md                 # Main documentation
+    ├── QUICKSTART.md            # 5-minute setup
+    ├── SETUP.md                 # Detailed setup
+    └── ARCHITECTURE.md          # System architecture
 \`\`\`
 
 ## Cài Đặt
@@ -99,7 +98,7 @@ edge_id,from_node,to_node,distance,is_oneway
 2,2,3,200.0,1
 ...
 \`\`\`
-- 2322 edges tổng cộng
+- 2356 edges tổng cộng
 - \`is_oneway\`: 0 = hai chiều, 1 = một chiều (from_node → to_node)
 - \`distance\`: tính bằng mét
 
@@ -225,7 +224,7 @@ Mở trình duyệt:
 ## Thông Số
 
 - **Số nodes**: 949
-- **Số edges**: 2322
+- **Số edges**: 2356
 - **Đường một chiều gốc**: 124
 - **Đường hai chiều gốc**: 2198
 - **Tần suất polling**: 2 giây

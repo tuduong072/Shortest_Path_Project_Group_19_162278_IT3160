@@ -12,7 +12,7 @@
 ### **Bước 1: Clone repository**
 ```bash
 git clone https://github.com/tuduong072/Shortest_Path_Project_Group_19_162278_IT3160.git
-cd Shortest_Path_Project_Group_19_162278_IT3160
+cd project
 ```
 
 ### **Bước 2: Cài đặt Python dependencies**
@@ -33,7 +33,7 @@ pip install --user -r requirements.txt
 # Cấu trúc thư mục:
 # data/
 #   ├── nodes.csv      # 949 nodes
-#   └── edges.csv      # 2322 edges
+#   └── edges.csv      # 2356 edges
 
 # Nếu chưa có dữ liệu, tạo thư mục mẫu:
 mkdir -p data

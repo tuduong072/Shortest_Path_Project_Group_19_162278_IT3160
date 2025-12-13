@@ -27,7 +27,7 @@ node_id,latitude,longitude
 ...
 ```
 
-**data/edges.csv** (2322 edges):
+**data/edges.csv** (2356 edges):
 ```csv
 edge_id,from_node,to_node,distance,is_oneway
 1,1,2,150.5,0
