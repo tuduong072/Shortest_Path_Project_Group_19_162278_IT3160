@@ -18,10 +18,7 @@ fi
 echo "Checking dependencies..."
 pip3 install -r requirements.txt 2>/dev/null || pip install -r requirements.txt
 
-if [ ! -f "../.env" ]; then
-    echo "Error: .env file not found"
-    exit 1
-fi
+
 
 echo ""
 echo "Checking database..."
