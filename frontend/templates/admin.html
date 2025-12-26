@@ -11,14 +11,14 @@
 <body>
     <div class="container">
         <header>
-            <h1>Admin Panel - Quản Lý Ràng Buộc Đường</h1>
-            <a href="/" class="admin-link">Chế độ Người Dùng</a>
+            <h1>Admin Panel - Quản lý ràng buộc đường</h1>
+            <a href="/" class="admin-link">Chế độ người dùng</a>
         </header>
 
         <div class="content">
             <div class="sidebar">
                 <div class="section">
-                    <h2>Chọn Vùng</h2>
+                    <h2>Chọn vùng</h2>
 
                     <div class="tabs">
                         <button class="tab-btn active" data-tab="polygon">Polygon</button>
@@ -45,17 +45,17 @@
                             <label>Bán kính (m):</label>
                             <input type="number" id="circle-radius" step="1" placeholder="500">
                         </div>
-                        <button id="apply-circle" class="btn btn-secondary">Áp Dụng Hình Tròn</button>
+                        <button id="apply-circle" class="btn btn-secondary">Áp dụng hình tròn</button>
                     </div>
 
                     <div id="rectangle-tab" class="tab-content">
                         <p>Sử dụng công cụ vẽ trên bản đồ để tạo hình chữ nhật</p>
-                        <button id="draw-rectangle" class="btn btn-secondary">Vẽ Hình Chữ Nhật</button>
+                        <button id="draw-rectangle" class="btn btn-secondary">Vẽ hình chữ nhật</button>
                     </div>
                 </div>
 
                 <div id="affected-edges" class="section hidden">
-                    <h2>Cạnh Bị Ảnh Hưởng</h2>
+                    <h2>Cạnh bị ảnh hưởng</h2>
                     <div class="edges-count">
                         Số cạnh: <strong id="edges-count">0</strong>
                     </div>
@@ -63,14 +63,14 @@
                 </div>
 
                 <div id="constraint-config" class="section hidden">
-                    <h2>Cấu Hình Ràng Buộc</h2>
+                    <h2>Cấu hình ràng buộc</h2>
 
                     <div class="input-group">
                         <label>Loại ràng buộc:</label>
                         <select id="constraint-type" class="select-box">
                             <option value="block">Block (Chặn hoàn toàn)</option>
                             <option value="penalty">Penalty (Hệ số phạt)</option>
-                            <option value="oneway">Oneway (Một/Hai chiều)</option>
+                            <option value="oneway">Oneway (Forward/Backward/Both)</option>
                         </select>
                     </div>
 
@@ -93,13 +93,13 @@
                         <input type="text" id="constraint-description" placeholder="VD: Ngập nặng 50cm">
                     </div>
 
-                    <button id="apply-constraints" class="btn btn-primary">Áp Dụng Ràng Buộc</button>
+                    <button id="apply-constraints" class="btn btn-primary">Áp dụng ràng buộc</button>
                 </div>
 
                 <div class="section">
-                    <h2>Quản Lý</h2>
-                    <button id="clear-constraints" class="btn btn-danger">Xóa Tất Cả Ràng Buộc</button>
-                    <button id="refresh-map" class="btn btn-secondary">Làm Mới Bản Đồ</button>
+                    <h2>Quản lý</h2>
+                    <button id="clear-constraints" class="btn btn-danger">Xóa tất cả ràng buộc</button>
+                    <button id="refresh-map" class="btn btn-secondary">Làm mới bản đồ</button>
                 </div>
 
                 <div id="status" class="status hidden">

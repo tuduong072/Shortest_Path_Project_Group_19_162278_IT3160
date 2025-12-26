@@ -32,7 +32,7 @@ if exist requirements.txt (
     pip install -r requirements.txt
 ) else (
     echo WARNING: requirements.txt not found
-    pip install flask flask-cors python-dotenv
+    pip install flask flask-cors 
 )
 
 :: Check data folder
