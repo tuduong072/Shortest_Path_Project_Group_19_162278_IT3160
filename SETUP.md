@@ -19,7 +19,7 @@ mkdir -p data/constraints
 
 Thay thế dữ liệu mẫu trong thư mục `data/` bằng dữ liệu thực của bạn:
 
-**data/nodes.csv** (949 nodes):
+**data/nodes.csv** (1433 nodes):
 ```csv
 node_id,latitude,longitude
 1,20.962223,105.830595
@@ -27,7 +27,7 @@ node_id,latitude,longitude
 ...
 ```
 
-**data/edges.csv** (2356 edges):
+**data/edges.csv** (1873 edges):
 ```csv
 edge_id,from_node,to_node,distance,is_oneway
 1,1,2,150.5,0

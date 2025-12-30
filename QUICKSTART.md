@@ -32,8 +32,8 @@ pip install --user -r requirements.txt
 # Đảm bảo có thư mục data với các file CSV
 # Cấu trúc thư mục:
 # data/
-#   ├── nodes.csv      # 949 nodes
-#   └── edges.csv      # 2356 edges
+#   ├── nodes.csv      # 1433 nodes
+#   └── edges.csv      # 1873 edges
 
 # Nếu chưa có dữ liệu, tạo thư mục mẫu:
 mkdir -p data

@@ -61,7 +61,7 @@ This is a web-based routing system for Hoàng Liệt ward with real-time constra
 │  ┌──────────┐  ┌──────────┐  ┌────────────────────┐          │
 │  │  nodes   │  │  edges   │  │ constraints_edges  │          │
 │  │          │  │          │  │                    │          │
-│  │ 949 rows │  │2356 rows │  │   Dynamic data     │          │
+│  │ 1433 rows│  │1873 rows │  │   Dynamic data     │          │
 │  └──────────┘  └──────────┘  └────────────────────┘          │
 │                                                              │
 │  Row Level Security (RLS): Public read, Authenticated write  │
@@ -322,8 +322,8 @@ All tables have RLS enabled with following policies:
 ## Scalability
 
 ### Current Limits
-- Nodes: ~1,000 (949 in Hoàng Liệt)
-- Edges: ~5,000 (2356 in Hoàng Liệt)
+- Nodes: ~1,500 (1433 in Hoàng Liệt)
+- Edges: ~5,000 (1873 in Hoàng Liệt)
 - Concurrent users: ~100 (Flask dev server)
 
 ### Scaling Options

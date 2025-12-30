@@ -64,8 +64,8 @@ project/
 │           └── admin.js         # Admin interface logic
 │
 ├── data/                          # CSV data files
-│   ├── nodes.csv                # 949 nodes
-│   ├── edges.csv                # 2356 edges
+│   ├── nodes.csv                # 1433 nodes
+│   ├── edges.csv                # 1873 edges
 │   └── constraints/
 │       └── constraints_edges.csv # Constraints (auto-created)
 │
@@ -89,7 +89,7 @@ node_id,latitude,longitude
 2,20.961500,105.831000
 ...
 \`\`\`
-- 949 nodes cho phường Hoàng Liệt
+- 1433 nodes cho phường Hoàng Liệt
 
 **data/edges.csv**:
 \`\`\`csv
@@ -98,7 +98,7 @@ edge_id,from_node,to_node,distance,is_oneway
 2,2,3,200.0,1
 ...
 \`\`\`
-- 2356 edges tổng cộng
+- 1873 edges tổng cộng
 - \`is_oneway\`: 0 = hai chiều, 1 = một chiều (from_node → to_node)
 - \`distance\`: tính bằng mét
 
@@ -223,8 +223,8 @@ Mở trình duyệt:
 
 ## Thông Số
 
-- **Số nodes**: 949
-- **Số edges**: 2356
+- **Số nodes**: 1433
+- **Số edges**: 1873
 - **Đường một chiều gốc**: 124
 - **Đường hai chiều gốc**: 2198
 - **Tần suất polling**: 2 giây
